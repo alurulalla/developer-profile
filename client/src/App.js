@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import TextBox from './component/TextBox';
+import UserList from './component/UserList';
+
+const { default: ContentHeading } = require('./component/ContentHeading');
+const { default: Footer } = require('./component/Footer');
+const { default: Hero } = require('./component/Hero');
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='relative w-auto h-screen font-body'>
+      <Hero />
+      <ContentHeading>Explore developer profiles</ContentHeading>
+      <TextBox />
+      <UserList />
+      <Footer />
     </div>
   );
 }
