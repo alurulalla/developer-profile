@@ -1,19 +1,14 @@
-import TextBox from './component/TextBox';
-import UserList from './component/UserList';
+import { Route, Switch } from 'react-router-dom';
 
-const { default: ContentHeading } = require('./component/ContentHeading');
-const { default: Footer } = require('./component/Footer');
-const { default: Hero } = require('./component/Hero');
+import DeveloperInfoPage from './pages/DeveloperInfoPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <div className='relative w-auto h-screen font-body'>
-      <Hero />
-      <ContentHeading>Explore developer profiles</ContentHeading>
-      <TextBox />
-      <UserList />
-      <Footer />
-    </div>
+    <Switch>
+      <Route path='/' exact component={HomePage} />
+      <Route path='/developer-info' exact component={DeveloperInfoPage} />
+    </Switch>
   );
 }
 
