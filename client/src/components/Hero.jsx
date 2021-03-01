@@ -1,7 +1,8 @@
 import React from 'react';
+
 import devHeroImage from '../images/dev_hero.png';
 
-const Hero = () => {
+const Hero = ({ isModalOpen }) => {
     return (
         <div className='h-auto text-white bg-primary p-13 lg:py-25 lg:p-0'>
             <div className='flex flex-col-reverse items-center justify-between lg:flex-row'>
