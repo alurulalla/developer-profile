@@ -11,14 +11,14 @@ const app = express();
 app.use(cors());
 app.options('*', cors());
 
-// Access Public files
-app.use(express.static(path.join(__dirname, 'public')));
-
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
 const __dirname = path.resolve();
+// Access Public files
+app.use(express.static(path.join(__dirname, 'public')));
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname, '/client/build'));
   app.get('*', (req, res) => {
