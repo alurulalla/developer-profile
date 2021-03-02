@@ -15,7 +15,8 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-const __dirname = path.resolve();
+console.log(process.env.NODE_ENV);
+
 // Access Public files
 app.use(express.static(path.join(__dirname, 'public')));
 
