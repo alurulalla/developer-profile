@@ -7,6 +7,16 @@ const devProfileRoutes = require('./routes/devProfileRouters');
 
 const app = express();
 
+// Access Public files
+app.use(express.static(path.join(__dirname, 'data')));
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../', 'client/build')));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../', 'client', 'build', 'index.html'));
+  });
+}
+
 // CORS
 app.use(cors());
 app.options('*', cors());
@@ -16,16 +26,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 console.log(process.env.NODE_ENV);
-
-// Access Public files
-app.use(express.static(path.join(__dirname, 'public')));
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '/client/build')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 // Body parser
 app.use(express.json());

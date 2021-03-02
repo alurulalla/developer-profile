@@ -4,6 +4,7 @@ const axios = require('axios');
 
 const dataPath = path.join(__dirname, '..', 'data', 'developersProfile.json');
 exports.getDevelopers = async (req, res) => {
+  console.log('here');
   try {
     const developersData = JSON.parse(await fs.readFile(dataPath, 'utf-8'));
     const developers = developersData.map((dev) => {
