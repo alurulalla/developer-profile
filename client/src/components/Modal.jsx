@@ -49,7 +49,7 @@ const Modal = ({ modalClose }) => {
 
     return (
         <div className='absolute inset-0 z-10 items-center justify-center overflow-auto text-black bg-transparent lg:p-56 lg:flex font-body'>
-            <div className='h-full m-10 text-2xl bg-white shadow-2xl lg:h-auto lg:m-0 lg:w-350 lg:mt-192 xl:mt-97'>
+            <div className='h-full m-10 text-2xl bg-white shadow-2xl lg:h-auto lg:m-0 lg:w-350 lg:mt-192 2xl:mt-97'>
                 <div className='p-5 lg:p-13 text-base lg:text-3.5xl'>
                     Add developer profile
                 </div>
