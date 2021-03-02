@@ -22,6 +22,7 @@ const Modal = ({ modalClose }) => {
 
     const onSubmitHandler = async () => {
         if (github) {
+            setError('');
             const data = {
                 github_id: github,
                 linkedin_id: linkedIn,
@@ -32,7 +33,7 @@ const Modal = ({ modalClose }) => {
                 email
             }
             try {
-                await axios.post('/api/v1/developers', data, {
+                await axios.post('http://localhost:5000/api/v1/developers', data, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -40,7 +41,8 @@ const Modal = ({ modalClose }) => {
                 setError('');
                 modalClose();
             } catch (error) {
-                console.log(error);
+                console.log(error.response);
+                setError('Github id not found');
             }
         } else {
             setError('Github id is required');

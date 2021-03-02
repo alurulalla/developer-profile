@@ -20,10 +20,13 @@ const ProfileInput = ({ image, label, isRequrired, value, setValue, error, isEma
             </div>
             <div>
                 <input className={classNames('w-full h-auto p-2 my-1 border rounded-lg md:w-56 lg:my-5 lg:w-120 lg:h-13 focus:outline-none', {
-                    'border': error !== undefined ? true : false,
-                    'border-red-500': (error !== undefined && error !== '') ? true : false,
-                    'border-tertiary': value !== '' ? true : false
+                    'border': (error !== undefined || (error === 'Github id not found')) ? true : false,
+                    'border-red-500': ((error !== undefined && error !== '') || (error === 'Github id not found')) ? true : false,
+                    'border-tertiary': (value !== '' && (error !== 'Github id not found')) ? true : false
                 })} type='text' value={value} onChange={(e) => setValue(e.target.value)} />
+                <div className='text-red-500'>
+                    {error}
+                </div>
             </div>
         </>
     )
