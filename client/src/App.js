@@ -7,7 +7,7 @@ function App() {
   return (
     <Switch>
       <Route path='/' exact component={HomePage} />
-      <Route path='/developer-info' exact component={DeveloperInfoPage} />
+      <Route path='/developer-info/:id' exact component={DeveloperInfoPage} />
     </Switch>
   );
 }
