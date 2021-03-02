@@ -33,7 +33,7 @@ const Modal = ({ modalClose }) => {
                 email
             }
             try {
-                await axios.post('http://localhost:5000/api/v1/developers', data, {
+                await axios.post('/api/v1/developers', data, {
                     headers: {
                         'Content-Type': 'application/json'
                     }
