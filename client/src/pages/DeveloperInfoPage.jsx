@@ -62,7 +62,7 @@ const DeveloperInfoPage = () => {
                                         <ProfileIcon id={developerProfile.codechef_id} image={CodeChefImage} link={`https://www.codechef.com/users/${developerProfile.codechef_id}`} />
                                     )}
                                     {developerProfile.linkedin_id && (
-                                        <ProfileIcon id={developerProfile.linkedin_id} image={LinkedInImage} link={`https://in.linkedin.com/in/${developerProfile.github_id}`} />
+                                        <ProfileIcon id={developerProfile.linkedin_id} image={LinkedInImage} link={`https://in.linkedin.com/in/${developerProfile.linkedin_id}`} />
                                     )}
                                     {developerProfile.medium_id && (
                                         <ProfileIcon id={developerProfile.medium_id} image={MediumImage} link={`https://medium.com/@${developerProfile.medium_id}`} />
