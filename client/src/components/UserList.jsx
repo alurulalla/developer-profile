@@ -6,7 +6,6 @@ import { ReactComponent as ArrowIcon } from '../images/arrow.svg';
 import { Link } from 'react-router-dom';
 
 const UserList = ({ developersList }) => {
-    console.log(developersList);
     const developersData = (developersList.map(dev => (
         <div className='flex items-center justify-start mt-5 lg:mt-25' key={dev.id}>
             {dev.avatar_url ? <img src={dev.avatar_url} alt='avatar_url' className='rounded-full flex flex-shrink-0 mr-1.5 fill-current h-5 w-5 lg:w-25 lg:h-25 text-secondary lg:mr-13' /> : <UserIcon className='flex flex-shrink-0 mr-1.5 fill-current h-5 w-5 lg:w-25 lg:h-25 text-secondary lg:mr-13' />}

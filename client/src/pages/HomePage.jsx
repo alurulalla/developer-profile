@@ -10,9 +10,7 @@ const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onAddDeveloper = () => {
-    console.log('from homepage');
     setIsModalOpen(!isModalOpen);
-    console.log(isModalOpen);
   }
 
   return (

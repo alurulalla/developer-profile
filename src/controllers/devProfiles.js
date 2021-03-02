@@ -4,7 +4,6 @@ const axios = require('axios');
 
 const dataPath = path.join(__dirname, '..', 'data', 'developersProfile.json');
 exports.getDevelopers = async (req, res) => {
-  console.log('here');
   try {
     const developersData = JSON.parse(await fs.readFile(dataPath, 'utf-8'));
     const developers = developersData.map((dev) => {
@@ -36,7 +35,6 @@ exports.getDeveloperProfile = async (req, res) => {
 
 exports.addDevProfile = async (req, res) => {
   const devProfile = req.body;
-  console.log(devProfile);
   try {
     if (!devProfile.github_id)
       return res.status(400).json({ error: 'Github_id is required' });
