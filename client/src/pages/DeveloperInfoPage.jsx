@@ -19,6 +19,7 @@ import { ReactComponent as OfficeIcon } from '../images/office.svg';
 import { ReactComponent as ArrowIcon } from '../images/arrow.svg';
 import Footer from '../components/Footer';
 import ProfileIcon from '../components/ProfileIcon';
+import NotFound from '../components/NotFound';
 
 const DeveloperInfoPage = () => {
     const [developerProfile, setDeveloperProfile] = useState(null);
@@ -35,7 +36,7 @@ const DeveloperInfoPage = () => {
     return (
         <div className='font-body'>
             <NavBar />
-            {developerProfile && (
+            {developerProfile ? (
                 <>
                     <div className='h-full lg:h-101 bg-sub'>
                         <div className='flex flex-col items-center justify-center px-8 py-10 lg:justify-start lg:flex-row lg:py-20 lg:px-9'>
@@ -126,7 +127,9 @@ const DeveloperInfoPage = () => {
                         </>
                     </div>
                 </>
-            )}
+            ) : (
+                    <NotFound />
+                )}
             <Footer />
         </div>
     )
