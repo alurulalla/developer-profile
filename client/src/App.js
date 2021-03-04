@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import DeveloperInfoPage from './pages/DeveloperInfoPage';
 import HomePage from './pages/HomePage';
@@ -8,6 +8,7 @@ function App() {
     <Switch>
       <Route path='/' exact component={HomePage} />
       <Route path='/developer-info/:id' exact component={DeveloperInfoPage} />
+      <Redirect to='/' />
     </Switch>
   );
 }
