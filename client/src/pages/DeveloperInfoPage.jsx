@@ -23,11 +23,13 @@ import NotFound from '../components/NotFound';
 
 const DeveloperInfoPage = () => {
     const [developerProfile, setDeveloperProfile] = useState(null);
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
     useEffect(() => {
         const getDeveloperProfile = async () => {
             const data = await axios.get(`/api/v1/developers/${id}`);
             setDeveloperProfile(data.data);
+            setLoading(false);
         }
         getDeveloperProfile();
     }, [id]);
@@ -36,7 +38,7 @@ const DeveloperInfoPage = () => {
     return (
         <div className='font-body'>
             <NavBar />
-            {developerProfile ? (
+            {!loading && (developerProfile ? (
                 <>
                     <div className='h-full lg:h-101 bg-sub'>
                         <div className='flex flex-col items-center justify-center px-8 py-10 lg:justify-start lg:flex-row lg:py-20 lg:px-9'>
@@ -129,7 +131,7 @@ const DeveloperInfoPage = () => {
                 </>
             ) : (
                     <NotFound />
-                )}
+                ))}
             <Footer />
         </div>
     )
