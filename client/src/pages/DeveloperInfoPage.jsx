@@ -31,7 +31,12 @@ const DeveloperInfoPage = () => {
             setDeveloperProfile(data.data);
             setLoading(false);
         }
-        getDeveloperProfile();
+        try {
+            getDeveloperProfile();
+        } catch (error) {
+            console.log(error);
+            setLoading(false);
+        }
     }, [id]);
 
 
