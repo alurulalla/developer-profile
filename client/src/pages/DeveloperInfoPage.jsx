@@ -26,12 +26,12 @@ const DeveloperInfoPage = () => {
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
     useEffect(() => {
-        const getDeveloperProfile = async () => {
-            const data = await axios.get(`/api/v1/developers/${id}`);
-            setDeveloperProfile(data.data);
-            setLoading(false);
-        }
         try {
+            const getDeveloperProfile = async () => {
+                const data = await axios.get(`/api/v1/developers/${id}`);
+                setDeveloperProfile(data.data);
+                setLoading(false);
+            }
             getDeveloperProfile();
         } catch (error) {
             console.log(error);
